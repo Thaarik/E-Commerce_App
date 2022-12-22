@@ -1,17 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   flex: 1; /*to set all category images in same size */
   margin: 3px;
   height: 70vh;
-
   position: relative; /*to set the info and button on top-center to the category image. SO this acts as parent */
+
 `;
 const Image = styled.img`
   width: 100%; /*to set all category images in same size */
   height: 100%;
   object-fit: cover;
+  
+  ${mobile({ height: "30vh" })} /*mobile responsive (check responsive.js file) */
 `;
 const Info = styled.div`
   position: absolute; /*to set the info and button on top-center to the category image. SO this acts as children */

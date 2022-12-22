@@ -2,10 +2,11 @@ import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive.js";
 
 const Container = styled.div`
   height: 60px;
-  /* background-color: black; */
+  ${mobile({ height: "50px" })} /*mobile responsive (check responsive.js file) */
 `;
 
 const Wrapper = styled.div`
@@ -13,6 +14,7 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0" })} /*mobile responsive (check responsive.js file) */
 `;
 
 const Left = styled.div`
@@ -24,6 +26,7 @@ const Left = styled.div`
 const Lang = styled.span`
   font-size: 14px;
   cursor: pointer;
+  ${mobile({ display: "none" })} /*mobile responsive (check responsive.js file) */
 `;
 
 const SearchContainer = styled.div`
@@ -36,26 +39,32 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none; /*to remove border */
+  ${mobile({ width: "50px" })} /*mobile responsive (check responsive.js file) */
 `;
 const Center = styled.div`
   flex: 1; /*to align the navbar content to the center */
-  text-align:center;
+  text-align: center;
 `;
 
 const Logo = styled.h1`
   font-weight: bold;
+  ${mobile({ fontSize: "24px" })} /*mobile responsive (check responsive.js file) */
 `;
 const Right = styled.div`
   flex: 1; /*to align the navbar content to the right */
   display: flex;
   align-items: center; /*aligns register sign in cart to the center */
   justify-content: flex-end; /* sticks REGISTER SIGN IN CART to the right side of the navbar*/
+  
+  ${mobile({ flex:"2", justifyContent: "center" })} /*mobile responsive (check responsive.js file) */
 `;
 
 const MenuItems = styled.div`
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 25px;`;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 25px;
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })} /*mobile responsive (check responsive.js file) */
+`;
 
 const Navbar = () => {
   return (
@@ -64,20 +73,23 @@ const Navbar = () => {
         <Left>
           <Lang>EN</Lang>
           <SearchContainer>
-            <Input />
-            <Search style={{color:"grey", fontSize:"16px"}}/>
+            <Input placeholder="Search"/>
+            <Search style={{ color: "grey", fontSize: "16px" }} />
           </SearchContainer>
         </Left>
-        <Center><Logo>ECOMM</Logo></Center>
+        <Center>
+          <Logo>ECOMM</Logo>
+        </Center>
         <Right>
-            <MenuItems>Register</MenuItems>
-            <MenuItems>Sign In</MenuItems>
-            <MenuItems>
-            <Badge badgeContent={4} color="primary"> {/*from material icon */}
-                <ShoppingCartOutlined color="action" />  {/*from material icon */}
+          <MenuItems>Register</MenuItems>
+          <MenuItems>Sign In</MenuItems>
+          <MenuItems>
+            <Badge badgeContent={4} color="primary">
+              {" "}
+              {/*from material icon */}
+              <ShoppingCartOutlined color="action" /> {/*from material icon */}
             </Badge>
-            </MenuItems>
-            
+          </MenuItems>
         </Right>
       </Wrapper>
     </Container>

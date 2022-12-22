@@ -1,6 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import { useState } from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive.js";
 import { sliderItems } from "./../data.js";
 
 const Container = styled.div`
@@ -9,6 +10,7 @@ const Container = styled.div`
   display: flex;
   position: relative; /* position parent to position arrow */
   overflow: hidden; /*to make the slides overflow fr sliding behaviour */
+  ${mobile({ display: "none" })} /*mobile responsive (check responsive.js file) */
 `;
 
 const Wrapper = styled.div` /*wrapper to contain our slides and its slifding transitions */
