@@ -72,7 +72,7 @@ router.get("/find/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-//to GET ALL Users
+//to GET ALL Products
 router.get("/", verifyTokenAndAdmin, async (req, res) => {
   const queryNew = req.query.new; //if we give query like -> localhost:5000/api/products?new=true
   const queryCategory = req.query.category; //if we give query like -> localhost:5000/api/products?category=tshirt
