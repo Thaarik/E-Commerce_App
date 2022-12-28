@@ -4,13 +4,13 @@ const mongoose = require("mongoose");
 const ProductSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, unique: true },
-    desc: { type: String, required: true, },
+    desc: { type: String, required: true },
     img: { type: String, required: true },
-    categories: { type: Array}, //we can have multiple categories in a single product
-    size: { type: String },
-    color: { type: String },
+    categories: { type: Array }, //we can have multiple categories in a single product
+    size: { type: Array },
+    color: { type: Array },
     price: { type: Number, required: true },
-    
+    inStock: { type: Boolean, default: true },
   },
   { timestamps: true }
 );

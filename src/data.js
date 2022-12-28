@@ -42,17 +42,20 @@ export const categories = [
     {
         id:1,
         img: category1,
-        title:"COMBO PACK"
+        title:"COMBO PACK",
+        cat:"women"
     },
     {
         id:2,
         img: category2,
-        title:"TSHIRT PACK"
+        title:"TSHIRT PACK",
+        cat:"tshirt"
     },
     {
         id:3,
         img: category3,
-        title:"SHIRT PACK"
+        title:"SHIRT PACK",
+        cat:"shirt"
     },
 ]
 
