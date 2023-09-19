@@ -20,7 +20,7 @@ mongoose
     console.log(err);
   });
 
-  app.use(cors()) //cors function
+app.use(cors()) //cors function
 app.use(express.json()) //This is a middleware between request and response where it converts the body into json. 
                         //We  can pass any json file to post
 
